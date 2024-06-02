@@ -7,6 +7,7 @@ import IconComponent from './components/IconComponent';
 import StatusTabs from './components/StatusTabs';
 import CardN from './components/CardN';
 import ButtonCard from './components/ButtonCard';
+import CardWM from './components/CardWBootstrap'
 
 
 const App: React.FC = () => {
@@ -125,6 +126,25 @@ const App: React.FC = () => {
       link="#"
     />
 
+    </div>
+
+    <div>
+    <CardWM
+      type="card1"
+      image="https://via.placeholder.com/213x167"
+      title="My"
+      subtitle="Calendar"
+      icon={<FaCalendarAlt />}
+      link="#"
+    />
+    <CardWM
+      type="card2"
+      image="https://via.placeholder.com/213x167"
+      title="My"
+      subtitle="Calendar"
+      icon={<FaCalendarAlt />}
+      link="#"
+    />
     </div>
      
     </div>
