@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
-import './ButtonCard.css';
+import { Card, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 
 interface ButtonCardProps {
   type: 'card1' | 'card2' | 'card3';
@@ -42,16 +41,44 @@ const ButtonCard: React.FC<ButtonCardProps> = ({ type, title, subtitle, icon, im
 
   return (
     <Card
-      className={`button-card ${bgColor ? bgColor : 'bg-white'}`}
-      style={image ? { ...cardStyle, backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' } : cardStyle}
+      style={{
+        borderRadius: '0.5rem',
+        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        color: 'white',
+        position: 'relative',
+        padding: '1rem',
+        ...cardStyle,
+        ...(image ? { backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}),
+        backgroundColor: bgColor ? bgColor : 'white',
+      }}
     >
-      <CardBody className={`button-card-content ${image ? 'overlay' : ''}`}>
-        <div className="button-card-icon">{icon}</div>
+      <CardBody
+        style={{
+          borderRadius: '0.5rem',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          justifyContent: 'center',
+          padding: '1rem',
+          gap: '0.5rem',
+          ...(image ? { backgroundColor: 'rgba(0, 0, 0, 0.5)' } : {}),
+        }}
+      >
+        <div style={{ position: 'absolute', top: '30px', width: '1.5rem', height: '1.25rem' }}>{icon}</div>
         <div>
-          <CardTitle className="button-card-title">{title}</CardTitle>
-          <CardSubtitle className="button-card-subtitle">{subtitle}</CardSubtitle>
+          <CardTitle style={{ color: 'white', fontSize: '1.25rem', fontWeight: 500, fontFamily: 'Inter, sans-serif', lineHeight: 'normal' }}>
+            {title}
+          </CardTitle>
+          <CardSubtitle style={{ color: 'white', fontSize: '1.25rem', fontWeight: 500, fontFamily: 'Inter, sans-serif', lineHeight: 'normal' }}>
+            {subtitle}
+          </CardSubtitle>
         </div>
-        <a href={link} className="button-card-link">
+        <a href={link} style={{ position: 'absolute', bottom: '1rem', left: '1rem', color: 'white', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <FaArrowRight className="text-xl" />
         </a>
       </CardBody>
