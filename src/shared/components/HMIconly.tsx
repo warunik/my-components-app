@@ -20,12 +20,18 @@ export enum IconlyIcons {
   Profile = 'Profile',
   Message = 'Message',
   ArrowRight = 'ArrowRight',
+  ArrowLeft = 'ArrowLeft',
   ChevronRight = 'ChevronRight',
+  People = 'People',
+  Paper = 'Paper',
+  Setting = 'Setting',
+  Notification = 'Notification',
 }
 
 export enum HMIcons {
   Edit = 'Edit',
   Message = 'Message',
+  Menu = 'Menu',
 }
 
 interface HMIconProps extends Omit<IconProps, 'name'> {
