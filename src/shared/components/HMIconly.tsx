@@ -26,6 +26,7 @@ export enum IconlyIcons {
   Paper = 'Paper',
   Setting = 'Setting',
   Notification = 'Notification',
+  Download = 'Download',
 }
 
 export enum HMIcons {
