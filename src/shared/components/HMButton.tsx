@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, useContext } from 'react';
 import styled from 'styled-components';
-import { Theme, HMThemeContext } from '../provider/ThemeProvider';
+import { HMThemeContext, Theme } from '../provider/ThemeProvider';
 
 interface ButtonStyleProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
@@ -17,11 +17,15 @@ const ButtonBase = ({ ...props }: ButtonStyleProps) => <button {...props} />;
 
 export const HMButtonStyle = styled(ButtonBase)<ButtonStyleProps_>`
   width: 140px;
-  margin: 10px;
+  margin: 20px 10px 10px 10px;
   height: 40px;
-  border-radius: 30px;
+  border-radius: 7px;
   border: none;
+  font-family: Inter, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
   background-color: ${(props) => props.theme_.color.active};
+  color: ${(props) => props.theme_.color.onActive};
 `;
 
 export const HMButton = ({ text, ...htmlProps }: HMButtonProps) => {
